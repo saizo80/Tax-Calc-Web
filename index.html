@@ -22,9 +22,8 @@
         // with the functions defined in our Rust code 
       });
       function getInput() {
-            let userInput = document.getElementById('number_input').value;
-            document.getElementById('result');
-            result.innerHTML = wasm_bindgen.rustInterface(userInput);
+          let userInput = document.getElementById('number_input').value;
+          document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput);
         }
     </script>
   </body>
