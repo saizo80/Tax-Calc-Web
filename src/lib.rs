@@ -23,7 +23,7 @@ fn find_tax_target(target: f64, rate: f64) -> f64 {
 }
 
 #[wasm_bindgen]
-pub fn helperAgent(input: &str) -> String {
+pub fn rustInterface(input: &str) -> String {
     let rate: f64 = 0.07;
     if input.parse::<f64>().is_ok() { 
         let number = input.parse().unwrap();

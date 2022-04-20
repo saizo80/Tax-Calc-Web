@@ -5,7 +5,7 @@ declare namespace wasm_bindgen {
 	* @param {string} input
 	* @returns {string}
 	*/
-	export function helperAgent(input: string): string;
+	export function rustInterface(input: string): string;
 	
 }
 
@@ -13,7 +13,7 @@ declare type InitInput = RequestInfo | URL | Response | BufferSource | WebAssemb
 
 declare interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly helperAgent: (a: number, b: number, c: number) => void;
+  readonly rustInterface: (a: number, b: number, c: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_malloc: (a: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
