@@ -3,6 +3,9 @@ Tax Calculator
 For a given input it will calculate the amount that will add to 
 the target with the tax rate. 
 Default tax rate is 7% but can be easily changed in the main function.
+This code is adapted from the original to be able to work in a web format
+and integrate with JavaScript.
+
 Written by Matthew Thornton 
 April 19, 2022
 */
