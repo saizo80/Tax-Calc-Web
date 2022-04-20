@@ -31,7 +31,7 @@ pub fn rustInterface(input: &str, rate: &str) -> String {
         let value: f64 = find_tax_target(input.parse().unwrap()
             , rate.parse::<f64>().unwrap()/100.0);
         if value != -0.03 {
-            return format!("{:.2}", value);
+            return format!("${:.2}", value);
         }
         else{
             return String::from("Error, could not find target amount.");
