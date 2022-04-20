@@ -38,6 +38,6 @@ pub fn rustInterface(input: &str, rate: &str) -> String {
         }
     }
     else {
-        return String::from("Error");
+        return String::from("Error, please enter valid number.");
     }
 }
