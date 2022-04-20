@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="stylesheet" type="text/css" href="./css/style.css"/>
       <title>Rust Test</title>
     </head>
 
@@ -8,7 +9,9 @@
       <label for="number_input">Number:</label>
       <input type="text" id="number_input" name="number_input"><br><br>
       <input type="submit" value="Submit" onclick="javascript:getInput()">
-      Look at the console for output
+      <div id='result-panel'>
+        <div id='result'></div>
+      </div>
 
     <script src='./pkg/my_wasm_library.js'></script>
     <script>
@@ -19,8 +22,9 @@
         // with the functions defined in our Rust code 
       });
       function getInput() {
-            let test = document.getElementById('number_input').value;
-            console.log(wasm_bindgen.rustInterface(test));
+            let userInput = document.getElementById('number_input').value;
+            document.getElementById('result');
+            result.innerHTML = wasm_bindgen.rustInterface(userInput);
         }
     </script>
   </body>

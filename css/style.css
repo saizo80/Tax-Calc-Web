@@ -1,0 +1,9 @@
+#result-panel{
+    width: auto;
+    height: auto;
+}
+#result{
+    display: flex;
+    justify-content: center;
+    font-family: 'Asap', sans-serif;
+}
