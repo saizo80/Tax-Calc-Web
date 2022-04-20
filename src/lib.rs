@@ -24,12 +24,12 @@ fn find_tax_target(target: f64, rate: f64) -> f64 {
 }
 #[allow(non_snake_case)]
 #[wasm_bindgen]
-pub fn rustInterface(input: &str) -> String {
-    let rate: f64 = 0.07;
-    if input.parse::<f64>().is_ok() { 
+pub fn rustInterface(input: &str, rate: &str) -> String {
+    if input.parse::<f64>().is_ok() && rate.parse::<f64>().is_ok() { 
         let number = input.parse().unwrap();
+        let tax_rate = (rate.parse::<f64>().unwrap())/100.0;
             //println!("${:.2}", find_tax_target(number, rate));
-            return format!("${:.2}",find_tax_target(number, rate));
+            return format!("${:.2}",find_tax_target(number, tax_rate));
     }
     else {
         return String::from("None");

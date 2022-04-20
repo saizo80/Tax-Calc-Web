@@ -3,12 +3,14 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
       <link rel="stylesheet" type="text/css" href="./css/style.css"/>
-      <title>Rust Test</title>
+      <title>Tax-Calc-Web</title>
     </head>
 
     <body>
       <label for="number_input">Number:</label>
       <input type="text" id="number_input" name="number_input"><br><br>
+      <label for="tax_rate">Tax Rate:</label>
+      <input type="text" id="tax_rate" name="tax_rate" value="7">%<br><br>
       <input type="submit" value="Submit" onclick="javascript:getInput()">
       <div id='result-panel'>
         <div id='result'></div>
@@ -23,9 +25,9 @@
         // with the functions defined in our Rust code 
       });
       function getInput() {
-            let userInput = document.getElementById('number_input').value;
-            document.getElementById('result');
-            result.innerHTML = wasm_bindgen.rustInterface(userInput);
+          let userInput = document.getElementById('number_input').value;
+          let userRate = document.getElementById('tax_rate').value;
+          document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput, userRate);
         }
     </script>
   </body>

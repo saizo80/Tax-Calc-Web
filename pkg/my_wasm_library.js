@@ -83,14 +83,17 @@ let wasm_bindgen;
     }
     /**
     * @param {string} input
+    * @param {string} rate
     * @returns {string}
     */
-    __exports.rustInterface = function(input) {
+    __exports.rustInterface = function(input, rate) {
         try {
             const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
             const ptr0 = passStringToWasm0(input, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
             const len0 = WASM_VECTOR_LEN;
-            wasm.rustInterface(retptr, ptr0, len0);
+            const ptr1 = passStringToWasm0(rate, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+            const len1 = WASM_VECTOR_LEN;
+            wasm.rustInterface(retptr, ptr0, len0, ptr1, len1);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
             return getStringFromWasm0(r0, r1);
