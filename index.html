@@ -9,11 +9,11 @@
       <input type="text" id="number_input" name="number_input"><br><br>
       <input type="submit" value="Submit" onclick="javascript:getInput()">
 
-    <script src='./pkg/my_wasm_library.js'></script>
+    <script src='/pkg/my_wasm_library.js'></script>
     <script>
       window.addEventListener('load', async () => {
         // Load the wasm file
-        await wasm_bindgen('./pkg/my_wasm_library_bg.wasm');
+        await wasm_bindgen('/pkg/my_wasm_library_bg.wasm');
         // Once it's loaded the wasm_bindgen object is populated
         // with the functions defined in our Rust code 
       });
