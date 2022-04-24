@@ -1,9 +1,22 @@
 #result-panel{
+    margin: auto;
     width: auto;
     height: auto;
 }
 #result{
     display: flex;
     justify-content: center;
-    font-family: 'Asap', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#numberInput{
+    margin: auto;
+    width: 25%;
+    border: 3px solid green;
+    padding: 10px;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
