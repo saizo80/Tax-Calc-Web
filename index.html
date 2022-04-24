@@ -13,12 +13,17 @@
         <label for="tax_rate">Tax Rate:</label>
         <input type="text" id="tax_rate" name="tax_rate" value="7">%<br><br>
         <input type="submit" value="Submit" onclick="javascript:getInput()">
+        <input type="submit" value="JS Submit" onclick="javascript:getJSInput()">
+      </div>
+      <div id='result-panel'>
+        <div id='result'></div>
       </div>
       <div id='result-panel'>
         <div id='result'></div>
       </div>
   </body>
   <script src='./pkg/my_wasm_library.js'></script>
+  <script src='./js-version.js'></script>
   <script>
     window.addEventListener('load', async () => {
     // Load the wasm file
@@ -30,6 +35,11 @@
       let userInput = document.getElementById('number_input').value;
       let userRate = document.getElementById('tax_rate').value;
       document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput, userRate);
+    }
+    function getJSInput() {
+      let userInput = document.getElementById('number_input').value;
+      let userRate = document.getElementById('tax_rate').value;
+      document.getElementById('result').innerHTML = jsInterface(userInput, userRate);
     }
   </script>
 </html>
