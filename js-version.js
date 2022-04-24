@@ -18,7 +18,7 @@ function findTaxTarget(target, rate) {
 function jsInterface(input, rate) {
     let value = findTaxTarget(parseFloat(input), parseFloat(rate)/100.0);
     if (value != -0.03) {
-        return value.toFixed(2).toString()
+        return "$" + value.toFixed(2).toString()
     }
     else {
         return "Error, could not find target amount.";
