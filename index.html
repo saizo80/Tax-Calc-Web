@@ -5,30 +5,31 @@
       <link rel="stylesheet" type="text/css" href="./css/style.css"/>
       <title>Tax-Calc-Web</title>
     </head>
-
+    
     <body>
-      <label for="number_input">Number:</label>
-      <input type="text" id="number_input" name="number_input"><br><br>
-      <label for="tax_rate">Tax Rate:</label>
-      <input type="text" id="tax_rate" name="tax_rate" value="7">%<br><br>
-      <input type="submit" value="Submit" onclick="javascript:getInput()">
+      <div id='numberInput'>
+        <label for="number_input">Number:</label>
+        <input type="text" id="number_input" name="number_input"><br><br>
+        <label for="tax_rate">Tax Rate:</label>
+        <input type="text" id="tax_rate" name="tax_rate" value="7">%<br><br>
+        <input type="submit" value="Submit" onclick="javascript:getInput()">
+      </div>
       <div id='result-panel'>
         <div id='result'></div>
       </div>
-
-    <script src='./pkg/my_wasm_library.js'></script>
-    <script>
-      window.addEventListener('load', async () => {
-        // Load the wasm file
-        await wasm_bindgen('./pkg/my_wasm_library_bg.wasm');
-        // Once it's loaded the wasm_bindgen object is populated
-        // with the functions defined in our Rust code 
-      });
-      function getInput() {
-          let userInput = document.getElementById('number_input').value;
-          let userRate = document.getElementById('tax_rate').value;
-          document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput, userRate);
-        }
-    </script>
   </body>
+  <script src='./pkg/my_wasm_library.js'></script>
+  <script>
+    window.addEventListener('load', async () => {
+    // Load the wasm file
+    await wasm_bindgen('./pkg/my_wasm_library_bg.wasm');
+    // Once it's loaded the wasm_bindgen object is populated
+    // with the functions defined in our Rust code 
+    });
+    function getInput() {
+      let userInput = document.getElementById('number_input').value;
+      let userRate = document.getElementById('tax_rate').value;
+      document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput, userRate);
+    }
+  </script>
 </html>

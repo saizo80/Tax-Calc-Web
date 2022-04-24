@@ -1,2 +1,7 @@
 .DS_Store
 /target
+package.json
+Cargo.lock
+my_wasm_library.d.ts
+my_wasm_library_bg.wasm.d.ts
+my_wasm_library_bg.wasm
