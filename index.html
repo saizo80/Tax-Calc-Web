@@ -23,14 +23,15 @@
       </div>
     </body>
 
+    <!-- Pull in scripts from rust library and js library -->
     <script src='./pkg/my_wasm_library.js'></script>
     <script src='./js-version.js'></script>
     <script>
+      // Load the rust wasm file
       window.addEventListener('load', async () => {
-      // Load the wasm file
+      // Once loaded the wasm_bindgen object is populated
+      // with the functions defined in the rust code 
       await wasm_bindgen('./pkg/my_wasm_library_bg.wasm');
-      // Once it's loaded the wasm_bindgen object is populated
-      // with the functions defined in our Rust code 
       });
       function getInput() {
         let userInput = document.getElementById('number_input').value;
