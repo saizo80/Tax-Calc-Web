@@ -1,3 +1,5 @@
+// TODO: Write comments
+
 function complexMath(input, rate) {
     input += input*rate;
     input = Number((input.toFixed(2)));
