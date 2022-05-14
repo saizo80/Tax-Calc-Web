@@ -1,3 +1,4 @@
+// TODO: Write comments
 let wasm_bindgen;
 (function() {
     const __exports = {};
